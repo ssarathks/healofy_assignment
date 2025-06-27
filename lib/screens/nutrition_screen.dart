@@ -85,7 +85,7 @@ class NutritionScreen extends StatelessWidget {
               subtitle: 'The Implications',
               padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
             ),
-            const NutritionImplicationsCarousel(),
+            const NutritionImplicationsMediaCarousel(),
             const SizedBox(height: 30),
             const SectionHeading(
               title: 'Crucial Nutrients & Their Sources',
