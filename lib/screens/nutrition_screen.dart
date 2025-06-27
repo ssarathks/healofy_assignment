@@ -78,7 +78,7 @@ class NutritionScreen extends StatelessWidget {
               subtitle: 'Why It\'s So Crucial',
               padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
             ),
-            const PostpartumNutritionCards(),
+            const PostpartumNutritionMediaCards(),
             const SizedBox(height: 30),
             const SectionHeading(
               title: 'Ignoring Postpartum Nutrition',
