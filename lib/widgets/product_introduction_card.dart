@@ -42,9 +42,9 @@ class ProductIntroductionCard extends StatelessWidget {
               if (productImageUrl != null)
                 Positioned(
                   right: 0,
-                  top: 0,
+                  bottom: 0,
                   child: Container(
-                    width: 200,
+                    width: 100,
                     height: 280,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
@@ -58,7 +58,11 @@ class ProductIntroductionCard extends StatelessWidget {
                           return Container(
                             color: Colors.grey.shade200,
                             child: const Center(
-                              child: Icon(Icons.shopping_bag, size: 60, color: Colors.grey),
+                              child: Icon(
+                                Icons.shopping_bag,
+                                size: 60,
+                                color: Colors.grey,
+                              ),
                             ),
                           );
                         },
@@ -67,7 +71,7 @@ class ProductIntroductionCard extends StatelessWidget {
                   ),
                 ),
               Container(
-                padding: const EdgeInsets.only(right: 220),
+                padding: const EdgeInsets.only(right: 120),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -79,23 +83,20 @@ class ProductIntroductionCard extends StatelessWidget {
                         height: 1.6,
                       ),
                     ),
-                    const SizedBox(height: 300),
                     Row(
                       children: [
                         CustomButton(
                           text: 'SHOP NOW',
-                          onPressed: onShopNow,
+                          onPressed: () {},
                           backgroundColor: AppColors.primaryGreen,
                           textColor: Colors.white,
                           isOutlined: false,
-                          width: 140,
-                          height: 45,
-                          borderRadius: 22,
+                          borderRadius: 15,
                         ),
                         const SizedBox(width: 12),
                         Container(
-                          width: 45,
-                          height: 45,
+                          width: 65,
+                          height: 65,
                           decoration: BoxDecoration(
                             color: Colors.grey.shade200,
                             shape: BoxShape.circle,
@@ -122,7 +123,6 @@ class ProductIntroductionCard extends StatelessWidget {
   }
 }
 
-
 class HealofyProductIntroduction extends StatelessWidget {
   const HealofyProductIntroduction({super.key});
 
@@ -130,7 +130,10 @@ class HealofyProductIntroduction extends StatelessWidget {
   Widget build(BuildContext context) {
     return const ProductIntroductionCard(
       title: 'Introducing Healofy Postpartum Recovery Bites',
-      description: 'Healofy Postpartum Recovery Bites, an innovative nutrition solution is designed exclusively for moms! Packed with essential nutrients such as Protein, Iron, Calcium & DHA, these bites speed up your recovery post-childbirth. The proven herbs in it boost your milk supply while DHA enhances baby\'s brain & vision development.',
+      description:
+          'Healofy Postpartum Recovery Bites, an innovative nutrition solution is designed exclusively for moms! Packed with essential nutrients such as Protein, Iron, Calcium & DHA, these bites speed up your recovery post-childbirth. The proven herbs in it boost your milk supply while DHA enhances baby\'s brain & vision development.',
+      productImageUrl:
+          "https://m.media-amazon.com/images/I/415+jYKXH4L._AC_.jpg",
     );
   }
 }

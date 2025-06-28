@@ -30,68 +30,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 icon: const Icon(Icons.search, color: Colors.black),
                 onPressed: () {},
               ),
-              Stack(
-                children: [
-                  IconButton(
-                    icon: const Icon(Icons.link, color: Colors.black),
-                    onPressed: () {},
-                  ),
-                  Positioned(
-                    right: 11,
-                    top: 11,
-                    child: Container(
-                      padding: const EdgeInsets.all(2),
-                      decoration: BoxDecoration(
-                        color: Colors.red,
-                        borderRadius: BorderRadius.circular(6),
-                      ),
-                      constraints: const BoxConstraints(
-                        minWidth: 14,
-                        minHeight: 14,
-                      ),
-                      child: const Text(
-                        '1',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 8,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Stack(
-                children: [
-                  IconButton(
-                    icon: const Icon(Icons.shopping_cart, color: Colors.black),
-                    onPressed: () {},
-                  ),
-                  Positioned(
-                    right: 11,
-                    top: 11,
-                    child: Container(
-                      padding: const EdgeInsets.all(2),
-                      decoration: BoxDecoration(
-                        color: Colors.pink,
-                        borderRadius: BorderRadius.circular(6),
-                      ),
-                      constraints: const BoxConstraints(
-                        minWidth: 14,
-                        minHeight: 14,
-                      ),
-                      child: const Text(
-                        '2',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 8,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+              _buildIconWithBadge(Icons.link, '1', Colors.red, () {}),
+              _buildIconWithBadge(Icons.shopping_cart, '2', Colors.pink, () {}),
               IconButton(
                 icon: const Icon(Icons.person, color: Colors.black),
                 onPressed: () {},
@@ -101,6 +41,45 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 onPressed: () {},
               ),
             ],
+    );
+  }
+
+  Widget _buildIconWithBadge(
+    IconData icon,
+    String badgeText,
+    Color badgeColor,
+    VoidCallback onPressed,
+  ) {
+    return Stack(
+      children: [
+        IconButton(
+          icon: Icon(icon, color: Colors.black),
+          onPressed: onPressed,
+        ),
+        Positioned(
+          right: 11,
+          top: 11,
+          child: Container(
+            padding: const EdgeInsets.all(2),
+            decoration: BoxDecoration(
+              color: badgeColor,
+              borderRadius: BorderRadius.circular(6),
+            ),
+            constraints: const BoxConstraints(
+              minWidth: 14,
+              minHeight: 14,
+            ),
+            child: Text(
+              badgeText,
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 8,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ),
+      ],
     );
   }
 
